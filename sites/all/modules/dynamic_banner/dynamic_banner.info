@@ -1,0 +1,17 @@
+; $Id: dynamic_banner.info,v 1.6 2010/12/07 20:13:07 coolestdude1 Exp $
+
+name = Dynamic Banner
+description = "Makes a block that can be used to dynamically place a banner on any page you wish to support."
+dependencies[] = path
+core = 6.x
+
+; D7 Stuff Bellow
+;files[] = dynamic_banner.module
+;files[] = dynamic_banner.install
+;files[] = includes/callbacks.inc
+; Information added by drupal.org packaging script on 2010-12-07
+version = "6.x-1.5"
+core = "6.x"
+project = "dynamic_banner"
+datestamp = "1291753544"
+
