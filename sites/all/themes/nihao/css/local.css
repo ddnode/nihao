@@ -304,18 +304,28 @@
   font-size:16px;
   line-height:30px;
 }
+.page-flights .main,
+.page-trains .main,
 .page-taxonomy .main,
 .page-tours .main {
   border:1px solid #5a8632;
 }
+.page-flights .main-wrapper,
+.page-trains .main-wrapper,
 .page-taxonomy .main-wrapper,
 .page-tours .main-wrapper {
   padding-bottom:10px;
-}  
+}
+.page-flights .main-inner,
+.page-trains .main-inner,
 .page-taxonomy .main-inner,
 .page-tours .main-inner {
   background:#fff;
   padding:12px;
+}
+.page-flights .grid16-11,
+.page-trains .grid16-11 {
+  width:680px;
 }
 .page-taxonomy .grid16-3,
 .page-tours .grid16-3 {
@@ -497,6 +507,61 @@
 .tour-main-content .view-tour-hotel a {
   color:#000;
 }
+
+/*Flights and Trains*/ 
+#block-views-related_articles-block_1 .inner,
+#block-views-related_articles-block_2 .inner {
+  border:1px solid #7cbc44;
+}
+#block-views-related_articles-block_1 h2.title,
+#block-views-related_articles-block_2 h2.title {
+  background:#73b737;
+  height:38px;
+  line-height:38px;
+  padding-left:15px;
+  font-size:20px;
+  color:#fff;
   
+}
+#block-views-related_articles-block_1 .content,
+#block-views-related_articles-block_2 .content {
+  padding:0 15px;
+}
+#block-views-related_articles-block_1 .views-row,
+#block-views-related_articles-block_2 .views-row {
+  margin-bottom:10px;
+}
+#block-views-related_articles-block_1 .views-field-title a,
+#block-views-related_articles-block_2 .views-field-title a {
+  color:#000;
+}
 
-
+/*Ticket Style*/
+.view-ticket .views-table {
+  width:660px;
+  border:1px solid #74b738;
+}
+.view-ticket .views-table th {
+  border:none;
+  height:38px;
+  text-align:center;
+}
+.view-ticket .views-table h2 {
+  margin:0px;
+}
+.view-ticket .views-table tr {
+  border:1px solid #74b738;
+}
+.view-ticket .views-table {
+  background:url("../images/ticket.png") repeat-x;
+}
+.view-ticket .views-table td {
+  height:36px;
+  text-align:center;
+}
+.view-ticket .views-table tr.odd {
+  background:#edf9e6;
+}
+.view-ticket .views-table tr.even {
+  background:#fff;
+}
