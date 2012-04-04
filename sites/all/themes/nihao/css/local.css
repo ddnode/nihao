@@ -119,7 +119,7 @@
 }
 
 /*Slide Show*/
-.content-top {
+.front .content-top {
   padding:5px;
   background:#fff;
   margin-top:9px;
@@ -538,7 +538,7 @@
 
 /*Ticket Style*/
 .view-ticket .views-table {
-  width:660px;
+  width:662px;
   border:1px solid #74b738;
 }
 .view-ticket .views-table th {
@@ -564,4 +564,9 @@
 }
 .view-ticket .views-table tr.even {
   background:#fff;
+}
+#block-block-3 img,
+#block-block-4 img {
+  border:1px solid #74b738;
+  margin-bottom:10px;
 }
