@@ -572,6 +572,8 @@
 }
 
 /*Cities*/
+#block-block-7,
+#block-block-8,
 #block-block-6,
 #block-block-5 {
   width:660px;
@@ -579,6 +581,8 @@
   padding-bottom:10px;
   margin-bottom:10px;
 }
+#block-block-7 h2.title,
+#block-block-8 h2.title,
 #block-block-6 h2.title,
 #block-block-5 h2.title {
   background:url("../images/ticket.png") repeat-x;
@@ -593,10 +597,21 @@
   width:106px;
   border-right:1px solid #74b738;
 }
+#block-block-7 ul,
+#block-block-8 ul {
+  float:left;
+  list-style:none;
+  width:140px;
+  border-right:1px solid #74b738;
+}
+#block-block-7 ul.last,
+#block-block-8 ul.last,
 #block-block-6 ul.last,
 #block-block-5 ul.last {
   border:none;
 }
+#block-block-7 ul a,
+#block-block-8 ul a,
 #block-block-6 ul a,
 #block-block-5 ul a {
   color:#000;
