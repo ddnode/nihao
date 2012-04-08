@@ -304,18 +304,27 @@
   font-size:16px;
   line-height:30px;
 }
+.node-type-train-article .main,
+.node-type-flight-article .main,
+.node-type-page .main,
 .page-flights .main,
 .page-trains .main,
 .page-taxonomy .main,
 .page-tours .main {
   border:1px solid #5a8632;
 }
+.node-type-train-article .main-wrapper,
+.node-type-flight-article .main-wrapper,
+.node-type-page .main-wrapper,
 .page-flights .main-wrapper,
 .page-trains .main-wrapper,
 .page-taxonomy .main-wrapper,
 .page-tours .main-wrapper {
   padding-bottom:10px;
 }
+.node-type-train-article .main-inner,
+.node-type-flight-article .main-inner,
+.node-type-page .main-inner,
 .page-flights .main-inner,
 .page-trains .main-inner,
 .page-taxonomy .main-inner,
