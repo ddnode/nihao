@@ -304,27 +304,18 @@
   font-size:16px;
   line-height:30px;
 }
-.node-type-train-article .main,
-.node-type-flight-article .main,
-.node-type-page .main,
 .page-flights .main,
 .page-trains .main,
 .page-taxonomy .main,
 .page-tours .main {
   border:1px solid #5a8632;
 }
-.node-type-train-article .main-wrapper,
-.node-type-flight-article .main-wrapper,
-.node-type-page .main-wrapper,
 .page-flights .main-wrapper,
 .page-trains .main-wrapper,
 .page-taxonomy .main-wrapper,
 .page-tours .main-wrapper {
   padding-bottom:10px;
 }
-.node-type-train-article .main-inner,
-.node-type-flight-article .main-inner,
-.node-type-page .main-inner,
 .page-flights .main-inner,
 .page-trains .main-inner,
 .page-taxonomy .main-inner,
@@ -371,12 +362,18 @@
 
 
 /*node type tour*/
+.node-type-train-article .content-region-inner,
+.node-type-flight-article .content-region-inner,
+.node-type-page .content-region-inner,
 .node-type-tour .content-region-inner {
   background:#fff;
   border:3px solid #72b635;
   padding:20px;
   margin-bottom:10px;
 }
+.node-type-train-article h1.title,
+.node-type-flight-article h1.title,
+.node-type-page h1.title,
 .node-type-tour h1.title {
   font-size:28px;
   color:#4e7d22;
