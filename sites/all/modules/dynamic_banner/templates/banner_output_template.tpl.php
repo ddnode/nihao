@@ -42,7 +42,7 @@
     // just an image url came in
     if ($url) {
       $output .= "<div id='banner'>";
-      $output .= "<img src='/nihao/$url' class='jpg' alt='banner' width='764' height='280' />";
+      $output .= "<img src='/$url' class='jpg' alt='banner' width='764' height='280' />";
       $output .= "</div>";
     }
     elseif ( $display_errors) {
