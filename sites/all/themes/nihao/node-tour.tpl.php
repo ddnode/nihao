@@ -26,7 +26,7 @@
     <div class="content clearfix">
       <?php// print $content ?>
       <div class="info-area clearfix">
-        <div class="image-show left"><? print $field_image[0]['view'];?></div>
+        <div class="image-show left"><?php print $field_image[0]['view'];?></div>
         <div class="other-info left">
           <div class="tour-field-destination">
             <span>Destination:</span><?php print $field_destination[0]['value'];?>
@@ -38,8 +38,8 @@
             <?php print $field_price[0]['view'];?>
           </div>
           <div class="tour-button">
-            <span class="customize"><img src="/nihao/sites/all/themes/nihao/images/customize-button.png"/></span>
-            <span class="customer"><img src="/nihao/sites/all/themes/nihao/images/customer-button.png"/></span>
+            <span class="customize"><img src="/sites/all/themes/nihao/images/customize-button.png"/></span>
+            <span class="customer"><img src="/sites/all/themes/nihao/images/customer-button.png"/></span>
           </div>
         </div>
       </div>
