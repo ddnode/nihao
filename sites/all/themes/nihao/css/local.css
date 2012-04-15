@@ -362,6 +362,7 @@
 
 
 /*node type tour*/
+.node-type-webform .content-region-inner,
 .node-type-train-article .content-region-inner,
 .node-type-flight-article .content-region-inner,
 .node-type-page .content-region-inner,
@@ -371,6 +372,7 @@
   padding:20px;
   margin-bottom:10px;
 }
+.node-type-webform h1.title,
 .node-type-train-article h1.title,
 .node-type-flight-article h1.title,
 .node-type-page h1.title,
