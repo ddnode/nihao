@@ -195,6 +195,8 @@ function ckeditor_process_form(&$form) {
               $ckeditor_filters[$textarea_id][] = $id ."/". $format;
             }
           }
+          
+          drupal_add_js(array('ckeditor' => array('settings' => array($textarea_id => array('input_format' => $format)))), 'setting');
 
           //No filters assigned, remove xss class
           if (empty($ckeditor_filters[$textarea_id])) {
@@ -368,7 +370,7 @@ function ckeditor_init() {
     $editor_local_path  = ckeditor_path(TRUE);
     drupal_add_js($editor_local_path . '/ckeditor.js', 'module', 'footer', FALSE, TRUE, FALSE);
     drupal_add_js($module_drupal_path .'/includes/ckeditor.utils.js', 'module', 'footer' );
-    drupal_add_js(array('ckeditor' => array('ajaxToken' => drupal_get_token('ckeditorAjaxCall'), 'settings' => array('edit-footer', 'edit-header'))), 'setting');
+    drupal_add_js(array('ckeditor' => array('ajaxToken' => drupal_get_token('ckeditorAjaxCall'), 'default_input_format' => variable_get('filter_default_format', 1), 'settings' => array('edit-footer', 'edit-header'))), 'setting');
   }
 }
 
@@ -611,6 +613,8 @@ function ckeditor_process_textarea($element) {
       }
       drupal_add_js(array('ckeditor' => array('module_path' => $module_full_path, 'editor_path' => $editor_path)), 'setting');
       drupal_add_js(array('ckeditor' => array('ajaxToken' => drupal_get_token('ckeditorAjaxCall'))), 'setting');
+      drupal_add_js(array('ckeditor' => array('query' => $_GET['q'])), 'setting');
+      drupal_add_js(array('ckeditor' => array('default_input_format' => variable_get('filter_default_format', 1))), 'setting');
       $is_running = TRUE;
     }
 
@@ -622,7 +626,12 @@ function ckeditor_process_textarea($element) {
       $force_simple_toolbar = ckeditor_is_enabled('1', empty($global_conf['simple_incl_regex']) ? '' : $global_conf['simple_incl_regex'], $element['#id'], $_GET['q']);
     }
     if ($force_simple_toolbar) {
-      $toolbar = "[ [ 'Format', 'Bold', 'Italic', '-', 'NumberedList','BulletedList', '-', 'Link', 'Unlink', 'Image' ] ]";
+      if (!isset($global_conf['simple_toolbar'])) {
+        $toolbar = "[ [ 'Format', 'Bold', 'Italic', '-', 'NumberedList','BulletedList', '-', 'Link', 'Unlink', 'Image' ] ]";
+      }
+      else {
+        $toolbar = $global_conf['simple_toolbar'];
+      }
     }
 
     if (!empty($conf['theme_config_js']) && $conf['theme_config_js'] == 't' && file_exists($themepath .'ckeditor.config.js')) {
@@ -835,8 +844,8 @@ function ckeditor_process_textarea($element) {
         case 'ckfinder':
           if (user_access('allow CKFinder file uploads')) {
             $ckfinder_full_path = base_path() . ckfinder_path();
-            $settings[$textarea_id]['filebrowserImageBrowseUrl'] = $ckfinder_full_path .'/ckfinder/ckfinder.html?Type=Images';
-            $settings[$textarea_id]['filebrowserImageUploadUrl'] = $ckfinder_full_path .'/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+            $settings[$textarea_id]['filebrowserImageBrowseUrl'] = $ckfinder_full_path .'/ckfinder.html?Type=Images';
+            $settings[$textarea_id]['filebrowserImageUploadUrl'] = $ckfinder_full_path .'/core/connector/php/connector.php?command=QuickUpload&type=Images';
           }
           break;
         case 'imce':
@@ -870,8 +879,8 @@ function ckeditor_process_textarea($element) {
         case 'ckfinder':
           if (user_access('allow CKFinder file uploads')) {
             $ckfinder_full_path = base_path() . ckfinder_path();
-            $settings[$textarea_id]['filebrowserFlashBrowseUrl'] = $ckfinder_full_path .'/ckfinder/ckfinder.html?Type=Images';
-            $settings[$textarea_id]['filebrowserFlashUploadUrl'] = $ckfinder_full_path .'/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+            $settings[$textarea_id]['filebrowserFlashBrowseUrl'] = $ckfinder_full_path .'/ckfinder.html?Type=Images';
+            $settings[$textarea_id]['filebrowserFlashUploadUrl'] = $ckfinder_full_path .'/core/connector/php/connector.php?command=QuickUpload&type=Images';
           }
           break;
         case 'imce':
@@ -1290,7 +1299,7 @@ function ckeditor_get_nodetype($get_q) {
   static $nodetype;
 
   if (!isset($nodetype)) {
-    $menuitem = menu_get_item();
+    $menuitem = menu_get_item($get_q);
     $nodetype = '*';
     if (!empty($menuitem['page_arguments']) && is_array($menuitem['page_arguments'])) {
       foreach ($menuitem['page_arguments'] as $item) {

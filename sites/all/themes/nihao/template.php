@@ -543,3 +543,9 @@ function nihao_theme_paths($theme) {
 function nihao_themesettings_link($prefix, $suffix, $text, $path, $options) {
   return $prefix . (($text) ? l($text, $path, $options) : '') . $suffix;
 }
+
+function nihao_breadcrumb($breadcrumb) {
+  if (!empty($breadcrumb)) {
+    return '<div class="breadcrumb">'. implode(' > ', $breadcrumb) .'</div>';
+  }
+}
