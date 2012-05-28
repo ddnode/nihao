@@ -10,6 +10,7 @@ stylesheets[all][] = css/typography.css
 stylesheets[all][] = css/superfish.css
 stylesheets[all][] = css/superfish-navbar.css
 stylesheets[all][] = css/superfish-vertical.css
+stylesheets[all][] = calendar/css/ui.all.css
 
 scripts[] = js/jquery.bgiframe.min.js
 scripts[] = js/hoverIntent.js
@@ -17,6 +18,9 @@ scripts[] = js/supposition.js
 scripts[] = js/supersubs.js
 scripts[] = js/superfish.js
 scripts[] = js/script.js
+scripts[] = calendar/js/ui.core.js
+scripts[] = calendar/js/ui.datepicker.js
+scripts[] = js/nihao.js
 
 regions[sidebar_first] = sidebar first
 regions[sidebar_last] = sidebar last

@@ -38,8 +38,8 @@
             <?php print $field_price[0]['view'];?>
           </div>
           <div class="tour-button">
-            <span class="customize"><img src="/sites/all/themes/nihao/images/customize-button.png"/></span>
-            <span class="customer"><img src="/sites/all/themes/nihao/images/customer-button.png"/></span>
+            <span class="customize"><a href="?q=node/30"><img src="/sites/all/themes/nihao/images/customize-button.png"/></a></span>
+            <span class="customer"><a href="?q=node/29"><img src="/sites/all/themes/nihao/images/customer-button.png"/></a></span>
           </div>
         </div>
       </div>
