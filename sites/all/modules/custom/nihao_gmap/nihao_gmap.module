@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function nihao_gmap_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+switch ($op) {
+  case 'load':
+    if ($node->type == 'tour') {
+      for ($i = 0; $i < count($node->field_city_reference); $i++) :
+        $city = node_load($node->field_city_reference[$i]['nid']);
+        $gmap[$i] = $city->field_latitude[0]['value'] . ',' . $city->field_longitude[0]['value'];
+      endfor;
+
+      $gmap_citys = implode('+' , $gmap);
+      $gmap_value = "[gmap line=";
+      $gmap_value .= $gmap_citys;
+      $gmap_value .= " |zoom=4 |center=30,100 |width=460px |height=290px |control=Small |type=Map]";
+
+      $node->field_gmap[0]['value'] = $gmap_value;
+      $node->field_gmap[0]['format'] = 3;
+    }
+    break;
+  }
+}
